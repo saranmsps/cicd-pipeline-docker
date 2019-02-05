@@ -16,7 +16,7 @@ pipeline {
 
                      steps{
                         script{
-                          app = docker.build("saranmsps/node-app")
+                          app = docker.build("USER/node-app")
                           app.inside{
                                sh 'echo $(curl localhost:8080)'
                                      }
