@@ -5,7 +5,7 @@ pipeline {
 steps {
    echo 'Running build automation'
    sh './gradlew build --no-daemon'
-   archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+   
   }
 }
  stage('Build Docker Image') {
@@ -21,7 +21,7 @@ steps {
   stage('Push Docker Image') {
  steps {
     script {
-        docker.withRegistry('https://registry.hub.docker.com','dockerhub') {
+        docker.withRegistry('https://registry.hub.docker.com','dokerhub') {
         app.push("${env.BUILD_NUMBER}")
         app.push("latest")
        }
