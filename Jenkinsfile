@@ -31,7 +31,7 @@ pipeline {
                      }
                 steps{
                     script{
-                     docker.withRegistry('https://registry.hub.docker.com', 'saranjenkins')
+                     docker.withRegistry('https://registry.hub.docker.com', 'sarandocker')
                             {
                                 app.push("${env.BUILD_NUMBER}")
                                 app.push("latest")
