@@ -21,7 +21,7 @@ steps {
   stage('Push Docker Image') {
  steps {
     script {
-        docker.withRegistry('https://registry.hub.docker.com','dokerhub') {
+        docker.withRegistry('https://registry.hub.docker.com','dockerhub') {
         app.push("${env.BUILD_NUMBER}")
         app.push("latest")
        }
